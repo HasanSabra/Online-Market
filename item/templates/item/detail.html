@@ -5,7 +5,11 @@
 {% block content %}
 <div class="grid grid-cols-5 gap-6">
     <div class="col-span-3">
-        <img src="{{ item.image.url }}" class="rounded-xl">
+        
+        {% if item.image %}
+            <img src="{{ item.image.url }}" class="rounded-xl">
+        {% endif %}
+            
     </div>
 
     <div class="col-span-2 p-6 bg-gray-100 rounded-xl">
@@ -41,7 +45,11 @@
             <div>
                 <a href="{% url 'item:detail' item.id %}">
                     <div>
-                        <img src="{{ item.image.url }}" class="rounded-t-xl">
+                        
+                        {% if item.image %}
+                            <img src="{{ item.image.url }}" class="rounded-t-xl">
+                        {% endif %}
+                        
                     </div>
 
                     <div class="p-6 bg-white rounded-b-xl">
